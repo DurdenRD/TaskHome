@@ -26,5 +26,6 @@ if (result<0)
  {
     result = -result;
 }
+
 Console.WriteLine(True (number) ?  $"{number}->{result}" : "Это не трехзначное число, досвидания умник!"); 
 
