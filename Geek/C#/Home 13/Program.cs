@@ -25,6 +25,7 @@ bool Noresult(int x)
 Console.WriteLine("Введите цедле число:");
 int number = Convert.ToInt32(Console.ReadLine());
 
+
 int result = Third(number);
 
 Console.WriteLine(Noresult(result) ? $"{number} -> третьей цифры нет." : $"{number} -> {result}");
