@@ -12,7 +12,7 @@ bool Fivedigit(int digit)
 }
 
 
-void Palidrome(int num)
+bool Palidrome(int num)
 {
 
     int x1 = num % 10; //первый разряд
@@ -21,15 +21,16 @@ void Palidrome(int num)
     int x4 = num / 1000 % 10; //четвертый разряд
     int x5 = num / 10000; //пятый разряд
 
-    if (x1 == x5 & x2 == x4)
-    {
-        Console.WriteLine($"Число {num} является Палиндромом");
-    }
-    else
-    {
-        Console.WriteLine($"Число {num} не является Палиндромом");
+    return x1 == x5 & x2 == x4;
+    // if (x1 == x5 & x2 == x4)
+    // {
+    //     Console.WriteLine($"Число {num} является Палиндромом");
+    // }
+    // else
+    // {
+    //     Console.WriteLine($"Число {num} не является Палиндромом");
 
-    }
+    // }
 
 }
 
@@ -37,16 +38,16 @@ void Palidrome(int num)
 Console.WriteLine("Введите пятизначное число");
 int N = Convert.ToInt32(Console.ReadLine());
 
-if (Fivedigit(N) == true)
-{
-    Palidrome(N);
-}
-else
-{
-    Console.WriteLine("Вы ввели не пятизначное число");
-}
+// if (Fivedigit(N) == true)
+// {
+//     Palidrome(N);
+// }
+// else
+// {
+//     Console.WriteLine("Вы ввели не пятизначное число");
+// }
 
 
 //Вопрос ниже, почему не срабатывает тернарный метод, пробовал разные варианты??
-//Fivedigit(N) == true ? Palidrome(N) :  Console.WriteLine("Вы ввели не пятизначное число");
+Console.WriteLine(Fivedigit(N) ? Palidrome(N)? "Палиндром" : "Не палиндром" :  "Вы ввели не пятизначное число");
 
