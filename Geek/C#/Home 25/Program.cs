@@ -11,9 +11,10 @@ int b = Convert.ToInt32(Console.ReadLine());
 int result = Quart(a, b);
 if (ValiDateExp(b))
 {
-    Console.WriteLine($"Число {a} в степени {b} = {result}");
+    
 }
 
+    Console.WriteLine($"Число {a} в степени {b} = {result}");
 
 
 int Quart(int x, int y)
