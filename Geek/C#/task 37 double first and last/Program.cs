@@ -3,9 +3,9 @@
 // [6 7 3 6] -> 36 21
 
 
-int[] array = Array(9, 1, 10);
+int[] array = Array(5, 1, 10);
 
-int size1 = array.Length/2 + array.Length%2;
+int size1 = array.Length / 2 + array.Length % 2;
 Console.WriteLine($"size = {size1}");
 PrintArray(array);
 
@@ -22,22 +22,23 @@ int[] Array(int size, int min, int max)
 {
     int[] arr = new int[size];
     Random rnd = new Random();
-    
+
     for (int i = 0; i < size; i++)
     {
-       arr[i] = rnd.Next(min, max);
+        arr[i] = rnd.Next(min, max);
     }
     return arr;
 }
 
 int[] Multiplicate(int[] arr)
 {
-    int size = arr.Length/2 + arr.Length%2;
-    int[]mult = new int[size];
-    for (int i = 0; i < size; i++)
+    int size = arr.Length / 2 + arr.Length % 2;
+    int[] mult = new int[size];
+    for (int i = 0; i <= size-i; i++)
 
     {
-        mult[i] = arr[i] *= arr[arr.Length - 1 - i];
+        if (i != size-1) mult[i] = arr[i] *= arr[arr.Length - 1 - i];
+        else mult [i] = arr[i];
     }
     return mult;
 }
