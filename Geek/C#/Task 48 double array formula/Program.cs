@@ -34,7 +34,7 @@ void PrintMatrix(int[,] matrix)
         Console.Write("[");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i, j], 4}");
+            Console.Write($"{matrix[i, j],4}");
         }
         Console.WriteLine("]");
     }
@@ -42,5 +42,5 @@ void PrintMatrix(int[,] matrix)
 
 }
 
-int [,] array2d = CraitMatrix(3, 4);
+int[,] array2d = CraitMatrix(3, 4);
 PrintMatrix(array2d);
