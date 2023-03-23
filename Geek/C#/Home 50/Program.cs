@@ -10,37 +10,41 @@
 // [1,7] -> такого элемента в массиве нет
 
 Console.WriteLine("Введите значение строки элемента: ");
-int x = Convert.ToInt32(Console.ReadLine());
+int x = Convert.ToInt32(Console.ReadLine()) - 1;
 
 Console.WriteLine("Введите значение столбца элемента: ");
-int y = Convert.ToInt32(Console.ReadLine());
+int y = Convert.ToInt32(Console.ReadLine()) - 1;
 
 int[,] array2d = CraitMatrix(3, 4, -99, 100);
 PrintMatrix(array2d);
 
-ReturnDigit(x, y, array2d);
+if (ReturnDigit(x, y, array2d)) Console.Write($"элемент [{x + 1},{y + 1}] = {array2d[x, y]}");
 
-// {
-// if (true) Console.Write($"элемент [{x},{y}] = {array2d[x, y]}");
-//  else Console.WriteLine($"[{x},{y} -> такого элемента нет"); 
-// }
+else Console.Write($"элемент [{x + 1},{y + 1}] -> такого элемента нет");
 
 
 
+//Console.Write($"элемент [{row + 1},{colum + 1}] -> такого элемента нет");
+//Console.Write($"элемент [{row + 1},{colum + 1}] = {array2d[row, colum]}");
 
-string ReturnDigit(int row, int colums, int[,] matrix)
+
+
+
+bool ReturnDigit(int rows, int colums, int[,] matrix)
 {
-    
+
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (row == i & colums == j)
+            if (rows == i & colums == j)
             {
-                 Console.Write($"элемент [{x},{y}] = {array2d[x, y]}");
+            //Console.Write($"элемент [{rows+ 1},{colums + 1}] = {array2d[rows, colums]}");
+            return true;
             }
         }
     }
+    return false;
 }
 
 
