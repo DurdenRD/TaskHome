@@ -18,7 +18,6 @@ int[,] CraitMatrix(int rows, int colums, int min, int max)
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             matrix[i, j] = rnd.Next(min, max + 1);
-
         }
     }
     return matrix;
@@ -37,32 +36,28 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-
-
 int[,] SortringRows(int[,] matrix)
 {
     int min = 0;
-    
+
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int row = 0; row < matrix.GetLength(1) - 1; row++)
-    {
-        for (int j = row + 1; j < matrix.GetLength(1); j++)
         {
-            if (matrix[i, row] > matrix[i, j])
+            for (int j = row + 1; j < matrix.GetLength(1); j++)
             {
-                min = matrix[i, row];
-                matrix[i, row] = matrix[i, j];
-                matrix[i, j] = min;
+                if (matrix[i, row] > matrix[i, j])
+                {
+                    min = matrix[i, row];
+                    matrix[i, row] = matrix[i, j];
+                    matrix[i, j] = min;
+                }
             }
         }
     }
-    }
-    
+
     return matrix;
 }
-
-
 
 int[,] array2d = CraitMatrix(4, 4, -9, 9);
 PrintMatrix(array2d);
@@ -71,5 +66,3 @@ Console.WriteLine("");
 
 SortringRows(array2d);
 PrintMatrix(array2d);
-
-
