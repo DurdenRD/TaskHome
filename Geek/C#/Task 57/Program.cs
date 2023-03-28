@@ -107,9 +107,7 @@ void PrintCountRepeat(int[] array)
 
         if (j == array.Length - 1) Console.WriteLine($"{array[j]} повторяется -> {count} раз");
 
-
     }
-
 
 }
 
