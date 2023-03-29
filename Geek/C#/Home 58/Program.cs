@@ -39,27 +39,21 @@ int[,] Multiplication(int[,] matrixA, int[,] matrixB)
 {
     int[,] matrixC = new int[matrixA.GetLength(0), matrixB.GetLength(1)];
 
-   
-        for (int r = 0; r < matrixA.GetLength(0); r++)
+    for (int r = 0; r < matrixA.GetLength(0); r++)
+    {
+        for (int i = 0; i < matrixB.GetLength(1); i++)
+        {
+            matrixC[r, i] = 0;
+            for (int j = 0; j < matrixB.GetLength(0); j++)
             {
-                for (int i = 0; i < matrixB.GetLength(1); i++)
-                {
-                   matrixC[r,i] = 0;
-                    for (int j = 0; j < matrixB.GetLength(0); j++)
-                        {
-                         matrixC[r,i] += matrixA[r, j] * matrixB[j, i];
-                                 
-                        }
-                
-                }
-               
+                matrixC[r, i] += matrixA[r, j] * matrixB[j, i];
             }
-            ;
-        
+        }
+    }
+    
+
     return matrixC;
 }
-
-
 
 bool MultiplicationTrue(int[,] matrixA, int[,] matrixB)
 {
@@ -83,13 +77,11 @@ Console.WriteLine();
 
 int[,] matrix3 = Multiplication(matrix1, matrix2);
 
-if (MultiplicationTrue(matrix1, matrix2)) 
+if (MultiplicationTrue(matrix1, matrix2))
 {
     PrintMatrix(matrix3);
 }
-
 else
     Console.WriteLine(
         "Количество столбцов одной матрицы не соответсвует количеству столбцов другой матрицы"
     );
-
