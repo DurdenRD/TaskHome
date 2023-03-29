@@ -10,7 +10,7 @@
 
     for (int n = 1; n <= max; n++)
     {
-       if (j + colum >= 0 & j + colum < 4 & i + row >= 0 & i + row < 4 & matrix[i + row, j + colum] == 0)
+       if (j + colum >= 0 & j + colum < y & i + row >= 0 & i + row < x & matrix[i + row, j + colum] == 0)
         {
             i += row;
             j += colum;
