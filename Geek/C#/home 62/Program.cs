@@ -1,46 +1,58 @@
-﻿
-void CreatSpiral(int[,] matrix)
+﻿void CreatSpiral(int[,] matrix)
 {
     int i = 0;
     int j = -1;
-    int x =  matrix.GetLength(0);
+    int x = matrix.GetLength(0);
     int y = matrix.GetLength(1);
     int max = x * y;
     int row = 0;
     int colum = 1;
-   
 
     for (int n = 1; n <= max; n++)
     {
-        
-    if (j + colum >= 0 & j + colum < x & matrix [i + row, j + colum] == 0)
+       if (j + colum >= 0 & j + colum < 4 & i + row >= 0 & i + row < 4 & matrix[i + row, j + colum] == 0)
         {
-            i+=row;
-            j+=colum;
+            i += row;
+            j += colum;
             matrix[i, j] = n;
+            
         }
-        
-        else 
+       
+
+     
+        else
+        {
+            if (colum == 1)
             {
-                if(colum == 1) {colum = 0; row = 1;}
+                colum = 0;
+                row = 1;
+            }
+            else
+            {
+                if (row == 1)
+                {
+                    colum = -1;
+                    row = 0;
+                }
                 else
                 {
-                    if(row == 1) {colum = -1; row = 0;}
-                    else 
+                    if (colum == -1)
+                    {
+                        colum = 0;
+                        row = -1;
+                    }
+                    else
+                    {
+                        if (row == -1)
                         {
-                            if (colum == - 1) {colum = 0; row = -1;}
-                            else
-                            {
-                                if (row == - 1) {colum = 1; row = 0;}
-
-                            }
+                            colum = 1;
+                            row = 0;
                         }
-
-                } 
+                    }
+                }
             }
+        }
     }
-       
-    
 }
 
 void PrintMatrix(int[,] matrix)
