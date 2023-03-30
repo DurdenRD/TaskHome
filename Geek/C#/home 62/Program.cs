@@ -10,16 +10,14 @@
 
     for (int n = 1; n <= max; n++)
     {
-       if (j + colum >= 0 & j + colum < y & i + row >= 0 & i + row < x & matrix[i + row, j + colum] == 0)
+       if (j + colum >= 0 && j + colum < y && i + row >= 0 & i + row < x && matrix[i + row, j + colum] == 0)
+        
         {
             i += row;
             j += colum;
             matrix[i, j] = n;
-            
         }
-       
-
-     
+        
         else
         {
             if (colum == 1)
@@ -51,7 +49,14 @@
                     }
                 }
             }
+            i += row;
+            j += colum;
+            matrix[i, j] = n;
         }
+        
+           
+            
+        
     }
 }
 
