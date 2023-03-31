@@ -3,20 +3,18 @@
 Console.Write("Ведите N = ");
 int N = Convert.ToInt32(Console.ReadLine());
 Console.Write("сумма цифр N = ");
+
 //int result = 0;
- SumDig(N);
-Console.Write(N);
 
-void SumDig(int num)
+Console.Write(SumDig(N));
+
+int SumDig(int n)
 {
-       int sum = 0;
-
-    if (num == 0)
+    if (n == 0)
+        return 0;
+    else
+        return n % 10 + SumDig(n / 10 );
         
 
-    SumDig( num / 10);
-    sum+= num % 10;
-    return sum;
-    
-    
+    //SumDig(num / 10) % 10;
 }
